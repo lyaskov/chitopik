@@ -1,0 +1,7 @@
+parameters:
+#    chi_to_pik_parser.example.class: ChiToPik\ParserBundle\Example
+
+services:
+#    chi_to_pik_parser.example:
+#        class: %chi_to_pik_parser.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

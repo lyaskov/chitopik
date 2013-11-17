@@ -1,0 +1,8 @@
+chi_to_pik_store:
+    resource: "@ChiToPikStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+chi_to_pik_parser:
+    resource: "@ChiToPikParserBundle/Resources/config/routing.yml"
+    prefix:   /
+
