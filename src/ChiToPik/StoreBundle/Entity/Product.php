@@ -3,6 +3,7 @@
 namespace ChiToPik\StoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product
@@ -43,6 +44,13 @@ class Product
     private $productUrl;
 
     /**
+     * @var Date
+     *
+     * @ORM\Column(name="date_time_created", type="datetime")
+     */
+    private $dateTimeCreated;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="photo", type="string", length=255, nullable=false)
@@ -68,6 +76,36 @@ class Product
      * })
      */
     private $storeId;
+
+    /**
+     * @var \Category_Sore_Id
+     *
+     * @ORM\ManyToOne(targetEntity="CategoryStore", inversedBy="categoryStoreId")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category_store_id", referencedColumnName="category_store_id")
+     * })
+     */
+    private $categoryStoreId;
+
+    /**
+     * @var \Shipping_Id
+     *
+     * @ORM\ManyToOne(targetEntity="Shipping", inversedBy="shippingId")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="shipping_id", referencedColumnName="shipping_id")
+     * })
+     */
+    private $shippingId;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ProductOptions", mappedBy="product")
+     */
+    private $productOptions;
+
+    public function __construct()
+    {
+        $this->productOptions = new ArrayCollection();
+    }
 
 
 

@@ -18,7 +18,7 @@ class Store
      *
      * @ORM\Column(name="store_id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $storeId;
 
