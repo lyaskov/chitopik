@@ -256,4 +256,106 @@ class Product
     {
         return $this->storeId;
     }
+
+    /**
+     * Set dateTimeCreated
+     *
+     * @param \DateTime $dateTimeCreated
+     * @return Product
+     */
+    public function setDateTimeCreated($dateTimeCreated)
+    {
+        $this->dateTimeCreated = $dateTimeCreated;
+    
+        return $this;
+    }
+
+    /**
+     * Get dateTimeCreated
+     *
+     * @return \DateTime 
+     */
+    public function getDateTimeCreated()
+    {
+        return $this->dateTimeCreated;
+    }
+
+    /**
+     * Set categoryStoreId
+     *
+     * @param \ChiToPik\StoreBundle\Entity\CategoryStore $categoryStoreId
+     * @return Product
+     */
+    public function setCategoryStoreId(\ChiToPik\StoreBundle\Entity\CategoryStore $categoryStoreId = null)
+    {
+        $this->categoryStoreId = $categoryStoreId;
+    
+        return $this;
+    }
+
+    /**
+     * Get categoryStoreId
+     *
+     * @return \ChiToPik\StoreBundle\Entity\CategoryStore 
+     */
+    public function getCategoryStoreId()
+    {
+        return $this->categoryStoreId;
+    }
+
+    /**
+     * Set shippingId
+     *
+     * @param \ChiToPik\StoreBundle\Entity\Shipping $shippingId
+     * @return Product
+     */
+    public function setShippingId(\ChiToPik\StoreBundle\Entity\Shipping $shippingId = null)
+    {
+        $this->shippingId = $shippingId;
+    
+        return $this;
+    }
+
+    /**
+     * Get shippingId
+     *
+     * @return \ChiToPik\StoreBundle\Entity\Shipping 
+     */
+    public function getShippingId()
+    {
+        return $this->shippingId;
+    }
+
+    /**
+     * Add productOptions
+     *
+     * @param \ChiToPik\StoreBundle\Entity\ProductOptions $productOptions
+     * @return Product
+     */
+    public function addProductOption(\ChiToPik\StoreBundle\Entity\ProductOptions $productOptions)
+    {
+        $this->productOptions[] = $productOptions;
+    
+        return $this;
+    }
+
+    /**
+     * Remove productOptions
+     *
+     * @param \ChiToPik\StoreBundle\Entity\ProductOptions $productOptions
+     */
+    public function removeProductOption(\ChiToPik\StoreBundle\Entity\ProductOptions $productOptions)
+    {
+        $this->productOptions->removeElement($productOptions);
+    }
+
+    /**
+     * Get productOptions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProductOptions()
+    {
+        return $this->productOptions;
+    }
 }

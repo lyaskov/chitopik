@@ -43,4 +43,70 @@ class Shipping {
 
 
 
-} 
+
+    /**
+     * Get shippingId
+     *
+     * @return integer 
+     */
+    public function getShippingId()
+    {
+        return $this->shippingId;
+    }
+
+    /**
+     * Set typeName
+     *
+     * @param string $typeName
+     * @return Shipping
+     */
+    public function setTypeName($typeName)
+    {
+        $this->typeName = $typeName;
+    
+        return $this;
+    }
+
+    /**
+     * Get typeName
+     *
+     * @return string 
+     */
+    public function getTypeName()
+    {
+        return $this->typeName;
+    }
+
+    /**
+     * Add products
+     *
+     * @param \ChiToPik\StoreBundle\Entity\Product $products
+     * @return Shipping
+     */
+    public function addProduct(\ChiToPik\StoreBundle\Entity\Product $products)
+    {
+        $this->products[] = $products;
+    
+        return $this;
+    }
+
+    /**
+     * Remove products
+     *
+     * @param \ChiToPik\StoreBundle\Entity\Product $products
+     */
+    public function removeProduct(\ChiToPik\StoreBundle\Entity\Product $products)
+    {
+        $this->products->removeElement($products);
+    }
+
+    /**
+     * Get products
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+}

@@ -74,4 +74,175 @@ class ProductOptions {
      */
     private $countOrders;
 
-} 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set price
+     *
+     * @param float $price
+     * @return ProductOptions
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return float 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set priceOpt
+     *
+     * @param float $priceOpt
+     * @return ProductOptions
+     */
+    public function setPriceOpt($priceOpt)
+    {
+        $this->priceOpt = $priceOpt;
+    
+        return $this;
+    }
+
+    /**
+     * Get priceOpt
+     *
+     * @return float 
+     */
+    public function getPriceOpt()
+    {
+        return $this->priceOpt;
+    }
+
+    /**
+     * Set dateTimeCreated
+     *
+     * @param \DateTime $dateTimeCreated
+     * @return ProductOptions
+     */
+    public function setDateTimeCreated($dateTimeCreated)
+    {
+        $this->dateTimeCreated = $dateTimeCreated;
+    
+        return $this;
+    }
+
+    /**
+     * Get dateTimeCreated
+     *
+     * @return \DateTime 
+     */
+    public function getDateTimeCreated()
+    {
+        return $this->dateTimeCreated;
+    }
+
+    /**
+     * Set starRating
+     *
+     * @param float $starRating
+     * @return ProductOptions
+     */
+    public function setStarRating($starRating)
+    {
+        $this->starRating = $starRating;
+    
+        return $this;
+    }
+
+    /**
+     * Get starRating
+     *
+     * @return float 
+     */
+    public function getStarRating()
+    {
+        return $this->starRating;
+    }
+
+    /**
+     * Set countFeedBack
+     *
+     * @param integer $countFeedBack
+     * @return ProductOptions
+     */
+    public function setCountFeedBack($countFeedBack)
+    {
+        $this->countFeedBack = $countFeedBack;
+    
+        return $this;
+    }
+
+    /**
+     * Get countFeedBack
+     *
+     * @return integer 
+     */
+    public function getCountFeedBack()
+    {
+        return $this->countFeedBack;
+    }
+
+    /**
+     * Set countOrders
+     *
+     * @param integer $countOrders
+     * @return ProductOptions
+     */
+    public function setCountOrders($countOrders)
+    {
+        $this->countOrders = $countOrders;
+    
+        return $this;
+    }
+
+    /**
+     * Get countOrders
+     *
+     * @return integer 
+     */
+    public function getCountOrders()
+    {
+        return $this->countOrders;
+    }
+
+    /**
+     * Set productId
+     *
+     * @param \ChiToPik\StoreBundle\Entity\Product $productId
+     * @return ProductOptions
+     */
+    public function setProductId(\ChiToPik\StoreBundle\Entity\Product $productId = null)
+    {
+        $this->productId = $productId;
+    
+        return $this;
+    }
+
+    /**
+     * Get productId
+     *
+     * @return \ChiToPik\StoreBundle\Entity\Product 
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }
+}
