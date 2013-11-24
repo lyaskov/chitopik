@@ -18,7 +18,7 @@ class Product
      *
      * @ORM\Column(name="product_id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $productId;
 
@@ -357,5 +357,18 @@ class Product
     public function getProductOptions()
     {
         return $this->productOptions;
+    }
+
+    /**
+     * Set productId
+     *
+     * @param integer $productId
+     * @return Product
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+    
+        return $this;
     }
 }

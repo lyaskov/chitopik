@@ -42,9 +42,9 @@ class ProductOptions {
     /**
      * @var Decimal
      *
-     * @ORM\Column(name="price_opt", type="decimal", precision=15, scale=2)
+     * @ORM\Column(name="price_max", type="decimal", precision=15, scale=2)
      */
-    private $priceOpt;
+    private $priceMax;
 
     /**
      * @var Date
@@ -106,29 +106,6 @@ class ProductOptions {
     public function getPrice()
     {
         return $this->price;
-    }
-
-    /**
-     * Set priceOpt
-     *
-     * @param float $priceOpt
-     * @return ProductOptions
-     */
-    public function setPriceOpt($priceOpt)
-    {
-        $this->priceOpt = $priceOpt;
-    
-        return $this;
-    }
-
-    /**
-     * Get priceOpt
-     *
-     * @return float 
-     */
-    public function getPriceOpt()
-    {
-        return $this->priceOpt;
     }
 
     /**
@@ -244,5 +221,28 @@ class ProductOptions {
     public function getProductId()
     {
         return $this->productId;
+    }
+
+    /**
+     * Set priceMax
+     *
+     * @param float $priceMax
+     * @return ProductOptions
+     */
+    public function setPriceMax($priceMax)
+    {
+        $this->priceMax = $priceMax;
+    
+        return $this;
+    }
+
+    /**
+     * Get priceMax
+     *
+     * @return float 
+     */
+    public function getPriceMax()
+    {
+        return $this->priceMax;
     }
 }
