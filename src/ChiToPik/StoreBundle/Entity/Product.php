@@ -80,9 +80,9 @@ class Product
     /**
      * @var \Category_Sore_Id
      *
-     * @ORM\ManyToOne(targetEntity="CategoryStore", inversedBy="categoryStoreId")
+     * @ORM\ManyToOne(targetEntity="CategoryStore", inversedBy="products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="category_store_id", referencedColumnName="category_store_id")
+     *   @ORM\JoinColumn(name="fk_category_store_id", referencedColumnName="id")
      * })
      */
     private $categoryStoreId;
@@ -98,7 +98,7 @@ class Product
     private $shippingId;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductOptions", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="ProductOptions", mappedBy="product", cascade={"persist", "remove"})
      */
     private $productOptions;
 
@@ -108,6 +108,18 @@ class Product
     }
 
 
+    /**
+     * Set productId
+     *
+     * @param integer $productId
+     * @return Product
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+    
+        return $this;
+    }
 
     /**
      * Get productId
@@ -189,6 +201,29 @@ class Product
     }
 
     /**
+     * Set dateTimeCreated
+     *
+     * @param \DateTime $dateTimeCreated
+     * @return Product
+     */
+    public function setDateTimeCreated($dateTimeCreated)
+    {
+        $this->dateTimeCreated = $dateTimeCreated;
+    
+        return $this;
+    }
+
+    /**
+     * Get dateTimeCreated
+     *
+     * @return \DateTime 
+     */
+    public function getDateTimeCreated()
+    {
+        return $this->dateTimeCreated;
+    }
+
+    /**
      * Set photo
      *
      * @param string $photo
@@ -255,29 +290,6 @@ class Product
     public function getStoreId()
     {
         return $this->storeId;
-    }
-
-    /**
-     * Set dateTimeCreated
-     *
-     * @param \DateTime $dateTimeCreated
-     * @return Product
-     */
-    public function setDateTimeCreated($dateTimeCreated)
-    {
-        $this->dateTimeCreated = $dateTimeCreated;
-    
-        return $this;
-    }
-
-    /**
-     * Get dateTimeCreated
-     *
-     * @return \DateTime 
-     */
-    public function getDateTimeCreated()
-    {
-        return $this->dateTimeCreated;
     }
 
     /**
@@ -357,18 +369,5 @@ class Product
     public function getProductOptions()
     {
         return $this->productOptions;
-    }
-
-    /**
-     * Set productId
-     *
-     * @param integer $productId
-     * @return Product
-     */
-    public function setProductId($productId)
-    {
-        $this->productId = $productId;
-    
-        return $this;
     }
 }

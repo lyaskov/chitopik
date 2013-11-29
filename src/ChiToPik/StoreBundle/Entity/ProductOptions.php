@@ -25,9 +25,9 @@ class ProductOptions {
     /**
      * @var \ProductId
      *
-     * @ORM\ManyToOne(targetEntity="Product", inversedBy="ProductId")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="productOptions")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE")
      * })
      */
     private $productId;
@@ -74,6 +74,12 @@ class ProductOptions {
      */
     private $countOrders;
 
+    /**
+     * @var String
+     *
+     * @ORM\Column(name="price_unit", type="string", length=50)
+     */
+    private $priceUnit;
 
     /**
      * Get id
@@ -244,5 +250,28 @@ class ProductOptions {
     public function getPriceMax()
     {
         return $this->priceMax;
+    }
+
+    /**
+     * Set priceUnit
+     *
+     * @param string $priceUnit
+     * @return ProductOptions
+     */
+    public function setPriceUnit($priceUnit)
+    {
+        $this->priceUnit = $priceUnit;
+    
+        return $this;
+    }
+
+    /**
+     * Get priceUnit
+     *
+     * @return string 
+     */
+    public function getPriceUnit()
+    {
+        return $this->priceUnit;
     }
 }

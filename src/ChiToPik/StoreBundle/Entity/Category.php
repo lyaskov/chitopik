@@ -23,6 +23,13 @@ class Category
     private $categoryId;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="category_parent_id", type="integer")
+     */
+    private $categoryParentId;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
@@ -104,5 +111,28 @@ class Category
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Set categoryParentId
+     *
+     * @param integer $categoryParentId
+     * @return Category
+     */
+    public function setCategoryParentId($categoryParentId)
+    {
+        $this->categoryParentId = $categoryParentId;
+    
+        return $this;
+    }
+
+    /**
+     * Get categoryParentId
+     *
+     * @return integer 
+     */
+    public function getCategoryParentId()
+    {
+        return $this->categoryParentId;
     }
 }

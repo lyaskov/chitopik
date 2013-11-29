@@ -12,7 +12,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity
  * @ORM\Table(
  *            name="category_store",
- *            indexes={@ORM\Index(name="parent_id_index1", columns={"parent_id"})
+ *            indexes={
+ *                   @ORM\Index(name="index_parent_id", columns={"parent_id"}),
+ *                   @ORM\Index(name="categoryStoreId", columns={"category_store_id"})
  *             })
  */
 class CategoryStore
